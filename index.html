@@ -16,22 +16,24 @@
   <meta name="keywords" content="">
   <meta name="author" content="">
   
-  <!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
+  <!-- Place favicon.ico in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico">
   
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="css/style.css?v=1">
   
-  <!-- CSS : IE specific stylesheets -->
-  <!--[if lt IE 7 ]><link rel="stylesheet" href="css/style_ie6.css?v=1"><![endif]-->
-  <!--[if IE 7 ]><link rel="stylesheet" href="css/style_ie7.css?v=1"><![endif]-->
-  <!--[if IE 8 ]><link rel="stylesheet" href="css/style_ie8.css?v=1"><![endif]-->
-  <!--[if IE 9 ]><link rel="stylesheet" href="css/style_ie9.css?v=1"><![endif]-->
-  
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="js/modernizr.js"></script>
 </head>
-<body>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+
+<!--[if lt IE 7]><body class="ie6"><![endif]-->
+<!--[if IE 7]><body class="ie7"><![endif]-->
+<!--[if IE 8]><body class="ie8"><![endif]-->
+<!--[if IE 9]><body class="ie9"><![endif]-->
+<!--[if gt IE 9]><body><![endif]-->
+<!--[if !IE]><!--><body><!--<![endif]-->
 
   <div id="container">
     <header>
