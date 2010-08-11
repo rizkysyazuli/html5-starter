@@ -2,8 +2,8 @@
 
 ## CHANGELOG:
 
-v0.2 - August 11th, 2010 - Separate mobile template and a few small adjustments
-v0.1 - August 11th, 2010 - Initial fork from Paul Irish's [HTML5 Boilerplate](http://github.com/paulirish/html5-boilerplate)
+* v0.2 - August 11th, 2010 - Separate mobile template and a few small adjustments
+* v0.1 - August 11th, 2010 - Initial fork from Paul Irish's [HTML5 Boilerplate](http://github.com/paulirish/html5-boilerplate)
 
 ## INSTALLATION:
 
