@@ -2,7 +2,7 @@
 
 [Blueprint][bp] is the standard CSS framework. It has everything you need and a lot more. So use it...
 
-BP can be customized to each project specific needs. That is why it's not included in this starter-kit. Learn how to [customize it using the compressor][bp-compressor].
+BP can (and should) be customized to each project specific needs. That's why it's not included in this starter-kit. Learn how to [customize it using the compressor][bp-compressor].
 
 The "src" folder is for custom stylesheets that you want to compile along with BP.
 
@@ -11,7 +11,7 @@ The "src" folder is for custom stylesheets that you want to compile along with B
 
 ### Anything else?
 
-Just in case a project doesn't require BP, a CSS skeleton is already included. Otherwise it's safe to delete these.
+Just in case a project doesn't require Blueprint, a CSS skeleton is also included. Otherwise it's safe to delete these files.
 
 * __style.css__ - contains a reset, font normalization and some base styles.
 * __mobile.css__ - stylesheet for iOS, Android, Opera Mobile with media queries.
