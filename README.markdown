@@ -1,14 +1,9 @@
-###  HTML5 Boilerplate
+###  HTML5 Framework
 
 ## CHANGELOG:
 
-v0.9 -August 10th, 2010 - Initial release
-
-## LICENSE:
-
-Copyright Paul Irish
-
-Dual licensed under MIT and GPL
+v0.2 - August 11th, 2010 - Separate mobile template and a few small adjustments
+v0.1 - August 11th, 2010 - Initial fork from Paul Irish's [HTML5 Boilerplate](http://github.com/paulirish/html5-boilerplate)
 
 ## INSTALLATION:
 
