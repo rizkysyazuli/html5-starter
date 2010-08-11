@@ -1,4 +1,4 @@
-###  HTML5 Framework
+###  HTML5 Starter Kit
 
 ## CHANGELOG:
 
