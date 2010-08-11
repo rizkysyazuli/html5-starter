@@ -19,8 +19,13 @@
   <!-- Place favicon.ico in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="/favicon.ico">
   
-  <!-- CSS : implied media="all" -->
-  <link rel="stylesheet" href="css/style.css?v=1">
+  <!-- Blueprint CSS -->
+  <link rel="stylesheet" href="css/screen.css" media="screen, projection">
+  <link rel="stylesheet" href="css/print.css" media="print">
+  <!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" media="screen, projection"><![endif]-->
+  
+  <!-- Master CSS -->
+  <link rel="stylesheet" href="css/style.css?v=1" media="screen, projection">
   
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="js/modernizr.js"></script>
@@ -58,7 +63,7 @@
   <script src="js/plugins.js?v=1"></script>
   <script src="js/script.js?v=1"></script>
   
-  <!--[if lt IE 7 ]>
+  <!--[if lt IE 7]>
   <script src="js/dd_belatedpng.js?v=1"></script>
   <![endif]-->
   
