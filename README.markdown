@@ -1,11 +1,11 @@
-###  HTML5 Starter Kit
+##  HTML5 Starter Kit
 
-## CHANGELOG:
+### CHANGELOG:
 
-* v0.2 - August 11th, 2010 - Separate mobile template and a few small adjustments
+* v0.2 - August 11th, 2010 - Separate mobile template and added a few common JS libs and plugins
 * v0.1 - August 11th, 2010 - Initial fork from Paul Irish's [HTML5 Boilerplate](http://github.com/paulirish/html5-boilerplate)
 
-## INSTALLATION:
+### INSTALLATION:
 
 This is a set of files that a front-end developer can use to get started on a website, with following included:
 
