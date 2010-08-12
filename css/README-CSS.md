@@ -13,6 +13,5 @@ The "src" folder is for custom stylesheets that you want to compile along with B
 
 Just in case a project doesn't require Blueprint, a CSS skeleton is also included. Otherwise it's safe to delete these files.
 
-* __style.css__ - contains a reset, font normalization and some base styles.
-* __mobile.css__ - stylesheet for iOS, Android, Opera Mobile with media queries.
+* __style.css__ - contains a reset, font normalization and some base styles. adaptable to iOS, Android and Opera Mobile.
 * __handheld.css__ - stylesheet for the less-enabled mobile browsers like Opera Mini.
