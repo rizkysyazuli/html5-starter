@@ -16,16 +16,28 @@
   <meta name="keywords" content="">
   <meta name="author" content="">
   
-  <!-- Place favicon.ico in the root of your domain and delete these references -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <!--  Mobile Viewport Fix
+        j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+  device-width : Occupy full width of the screen in its current orientation
+  initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+  maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+  -->
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
   
-  <!-- Blueprint CSS - remove if not used -->
+  <!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  <!-- Blueprint CSS -->
   <link rel="stylesheet" href="css/screen.css" media="screen, projection">
   <link rel="stylesheet" href="css/print.css" media="print">
   <!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" media="screen, projection"><![endif]-->
   
-  <!-- Master CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css?v=1" media="screen, projection">
+  
+  <!-- For the less-enabled mobile browsers like Opera Mini -->
+  <link rel="stylesheet" href="css/handheld.css?v=1" media="handheld">
   
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="js/modernizr.js"></script>

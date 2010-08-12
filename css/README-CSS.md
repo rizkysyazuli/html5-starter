@@ -9,9 +9,11 @@ The "src" folder is for custom stylesheets that you want to compile along with B
 [bp]: http://blueprintcss.org/
 [bp-compressor]: http://jdclayton.com/blueprints_compress_a_walkthrough.html
 
-### Anything else?
+### What's Inside?
 
-Just in case a project doesn't require Blueprint, a CSS skeleton is also included. Otherwise it's safe to delete these files.
+Just in case a project doesn't use Blueprint, a CSS skeleton is already included.
 
-* __style.css__ - contains a reset, font normalization and some base styles. adaptable to iOS, Android and Opera Mobile.
+* __style.css__ - reset, font normalization and some base styles. adaptable to iOS, Android and Opera Mobile.
 * __handheld.css__ - stylesheet for the less-enabled mobile browsers like Opera Mini.
+
+Otherwise you can replace the contents of the "__style.css__" file with your own CSS (maybe not the media queries, you might need that). BP already provides a solid base stylesheet. 
