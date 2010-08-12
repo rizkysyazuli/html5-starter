@@ -1,3 +1,12 @@
+/**
+ * Project Name Plugins
+ *
+ * @author      Your Name <your@email.com>
+ * @version     0.x
+ * @see         http://www.theurl.com/
+ * @copyright   Copyright (c) 2010, Your Company
+ *
+ **/
 
 // remap jQuery to $
 (function($){
