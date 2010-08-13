@@ -4,7 +4,11 @@
 
 * v0.1 - August 11th, 2010 - Initial fork from Paul Irish's [HTML5 Boilerplate](http://github.com/paulirish/html5-boilerplate)
 
-### INSTALLATION:
+## LICENSE:
+
+The Unlicense (aka: public domain) http://unlicense.org
+
+## INSTALLATION:
 
 This is a set of files that a front-end developer can use to get started on a website, with following included:
 
