@@ -6,7 +6,7 @@
 
 ## LICENSE:
 
-The Unlicense (aka: public domain) http://unlicense.org
+[The Unlicense](http://unlicense.org) (aka: public domain) 
 
 ## INSTALLATION:
 
