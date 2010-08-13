@@ -2,7 +2,6 @@
 
 ### CHANGELOG:
 
-* v0.2 - August 11th, 2010 - Separate mobile template and added a few common JS libs and plugins
 * v0.1 - August 11th, 2010 - Initial fork from Paul Irish's [HTML5 Boilerplate](http://github.com/paulirish/html5-boilerplate)
 
 ### INSTALLATION:
