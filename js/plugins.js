@@ -1,8 +1,8 @@
 /**
- * Project Name Plugins
+ * [Project Name] Plugins
  *
  * @author      Your Name <your@email.com>
- * @version     0.x
+ * @version     x.x
  * @see         http://www.theurl.com/
  * @copyright   Copyright (c) 2010, Your Company
  *
