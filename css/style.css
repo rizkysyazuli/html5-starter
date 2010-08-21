@@ -33,8 +33,8 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, figure, footer, header, 
-hgroup, menu, nav, section, menu,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
   margin:0;
   padding:0;
@@ -45,8 +45,10 @@ time, mark, audio, video {
   background:transparent;
 }                  
 
-article, aside, figure, footer, header, 
-hgroup, nav, section { display:block; }
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section { 
+    display:block;
+}
 
 nav ul { list-style:none; }
 
@@ -63,7 +65,7 @@ mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
 
 del { text-decoration: line-through; }
 
-abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
 
 /* tables still need cellspacing="0" in the markup */
 table { border-collapse:collapse; border-spacing:0; }
@@ -74,21 +76,18 @@ input, select { vertical-align:middle; }
 /* END RESET CSS */
 
 
-/*
-fonts.css from the YUI Library: developer.yahoo.com/yui/
-          Please refer to developer.yahoo.com/yui/fonts/ for font sizing percentages
+/* fonts.css from the YUI Library: developer.yahoo.com/yui/
+   Please refer to developer.yahoo.com/yui/fonts/ for font sizing percentages
 
-There are three custom edits:
- * remove arial, helvetica from explicit font stack
- * make the line-height relative and unit-less
- * remove the pre, code styles
+  There are two custom edits:
+   * remove arial, helvetica from explicit font stack
+   * we normalize monospace styles ourselves
 */
-body { font: 13px sans-serif; *font-size:small; *font:x-small; line-height:1.22; }
+body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */
 
 table { font-size:inherit; font: 100%; }
 
-select, input, textarea { font: 99% sans-serif; }
-
+select, input, textarea, button { font:99% sans-serif; }
 
 /* normalize monospace sizing 
  * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
@@ -107,9 +106,7 @@ body, select, input, textarea { color: #444; }
 
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */ 
- 
-/* www.aestheticallyloyal.com/public/optimize-legibility/ */ 
-h1,h2,h3,h4,h5,h6 { font-weight: bold; text-rendering: optimizeLegibility; }
+h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 
 html { 
   /* maxvoltar.com/archive/-webkit-font-smoothing */ 
@@ -150,12 +147,16 @@ pre {
 /* align checkboxes, radios, text inputs with their label
    by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
 input[type="radio"] { vertical-align: text-bottom; }
-input[type="checkbox"] { vertical-align: bottom; *vertical-align: baseline; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
 .ie6 input { vertical-align: text-bottom; }
 
 /* hand cursor on clickable input elements */
 label, input[type=button], input[type=submit], button { cursor: pointer; }
 
+/* colors for form validity */
+input:invalid { background-color: #f0dddd; }
+input:valid   { background-color: #ddf0dd; }
 
 /* These selection declarations have to be separate.
    No text-shadow: twitter.com/miketaylr/status/12228805301 
@@ -181,7 +182,7 @@ button {  width: auto; overflow: visible; }
  */
 
 /* for image replacement */
-.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; }
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; }
 
 /* Hide for both screenreaders and browsers
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
@@ -197,11 +198,10 @@ button {  width: auto; overflow: visible; }
 /* Hide visually and from screenreaders, but maintain layout */
 .invisible { visibility: hidden; }
 
-/* >> The Magnificent CLEARFIX << */
-.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.clearfix { display: inline-block; }
-* html .clearfix { height: 1%; } /* Hides from IE-mac \*/
-.clearfix { display: block; }
+/* >> The Magnificent CLEARFIX << j.mp/phayesclearfix */
+.clearfix:after  { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { zoom: 1; }
+
 
 
 
@@ -268,7 +268,8 @@ button {  width: auto; overflow: visible; }
 @media screen and (max-device-width: 480px) {
   
   
-  /* Prevent iOS, WinMobile from adjusting font size */
-  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } 
+  /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
+     j.mp/textsizeadjust 
+  html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
 }
 
