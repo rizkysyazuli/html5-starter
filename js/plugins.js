@@ -20,7 +20,7 @@
 
 
 
-})(window.jQuery);
+})(this.jQuery);
 
 
 
