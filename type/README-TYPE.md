@@ -6,7 +6,7 @@ If you are using some sort of text replacement method please follow these simple
 * For better compatibility, use __@font-face__ files generated from [Font Squirrel Generator][generator].
 * Multiple typefaces should be separated into different sub-folders.
 
-[ff]: #
-[cf]: #
-[sifr]: #
+[ff]: http://nicewebtype.com/notes/2009/10/30/how-to-use-css-font-face/
+[cf]: http://cufon.shoqolate.com/generate/
+[sifr]: http://wiki.novemberborn.net/sifr3/
 [generator]: http://www.fontsquirrel.com/fontface/generator
