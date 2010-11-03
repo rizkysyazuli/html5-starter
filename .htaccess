@@ -23,11 +23,12 @@
 # Cache control is set only if mod_headers is enabled, so that's unncessary to declare
 </IfModule>
 
-# hacks.mozilla.org/2009/07/cross-site-xmlhttprequest-with-cors/
-# Disabled. Uncomment to serve cross-domain ajax requests
-#<IfModule mod_headers.c>
-#  Header set Access-Control-Allow-Origin "*"
-#</IfModule>
+# Serve cross-domain ajax requests, disabled.   
+# enable-cors.org
+# code.google.com/p/html5security/wiki/CrossOriginRequestSecurity
+#  <IfModule mod_headers.c>
+#    Header set Access-Control-Allow-Origin "*"
+#  </IfModule>
 
 
 
@@ -43,8 +44,11 @@
 </FilesMatch>
 
 
+# audio
+AddType audio/ogg                      oga ogg
+
 # video
-AddType video/ogg                      ogg ogv
+AddType video/ogg                      ogv
 AddType video/mp4                      mp4
 AddType video/webm                     webm
 
@@ -65,7 +69,8 @@ AddType image/webp                     webp
 AddType text/cache-manifest            manifest
 AddType text/x-component               htc
 AddType application/x-chrome-extension crx
-
+AddType application/x-xpinstall        xpi
+AddType application/octet-stream       safariextz
 
 
 
