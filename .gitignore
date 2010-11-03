@@ -5,3 +5,6 @@ build/buildinfo.properties
 .hg/
 thumb.db
 .idea
+
+*.tmproj
+*.kpf
