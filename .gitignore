@@ -24,3 +24,6 @@ thumb.db
 .svn
 publish
 .idea
+
+# files
+build/buildinfo.properties
