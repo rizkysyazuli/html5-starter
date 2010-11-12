@@ -1,9 +1,19 @@
 # Apache configuration file
 # httpd.apache.org/docs/2.2/mod/quickreference.html
 
+# Note .htaccess files are an overhead, this logic should be in your Apache config if possible
+# httpd.apache.org/docs/2.2/howto/htaccess.html
+
 # Techniques in here adapted from all over, including:
 #   Kroc Camen: camendesign.com/.htaccess
 #   perishablepress.com/press/2006/01/10/stupid-htaccess-tricks/
+
+
+# Apache module - mod_pagespeed, developed by Google, used to get websites hosted on Apache web servers to load twice faster on average.
+<IfModule pagespeed_module>
+# Official guide at: 
+# http://code.google.com/speed/page-speed/docs/using_mod.html
+</IfModule>
 
 
 # Force the latest IE version, in various cases when it may fall back to IE7 mode
@@ -99,9 +109,20 @@ AddType application/octet-stream       safariextz
 <IfModule mod_deflate.c>
 
 # html, txt, css, js, json, xml, htc:
+<IfModule filter_module>
+  FilterDeclare   COMPRESS
+  FilterProvider  COMPRESS  DEFLATE resp=Content-Type /text/(html|css|javascript|plain|x(ml|-component))/
+  FilterProvider  COMPRESS  DEFLATE resp=Content-Type /application/(javascript|json|xml|x-javascript)/
+  FilterChain     COMPRESS
+  FilterProtocol  COMPRESS  change=yes;byteranges=no
+</IfModule>
+
+<IfModule !mod_filter.c>
+  # Legacy versions of Apache
   AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
   AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript 
   AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+</IfModule>
 
 # webfonts and svg:
   <FilesMatch "\.(ttf|otf|eot|svg)$" >
@@ -121,7 +142,6 @@ AddType application/octet-stream       safariextz
 #   "access plus 1 week" or so
 
 <IfModule mod_expires.c>
-  Header set Cache-Control "public"
   ExpiresActive on
 
 # Perhaps better to whitelist expires rules? Perhaps.
@@ -166,6 +186,8 @@ AddType application/octet-stream       safariextz
   ExpiresByType text/css                  "access plus 1 month"
   ExpiresByType application/javascript    "access plus 1 month"
   ExpiresByType text/javascript           "access plus 1 month"
+
+  Header append Cache-Control "public"
 </IfModule>
 
 

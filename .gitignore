@@ -1,10 +1,26 @@
-.svn/
-publish/
-build/buildinfo.properties
-.DS_Store
-.hg/
-thumb.db
-.idea
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
 
+# OS or Editor folders
+.DS_Store
+.cache
+.project
+.settings
+nbproject
+thumb.db
 *.tmproj
 *.kpf
+
+# Folders to ignore
+.hg
+.svn
+publish
+.idea

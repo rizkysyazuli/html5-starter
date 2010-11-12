@@ -113,7 +113,7 @@ body, select, input, textarea {
    you'll want to define those yourself. */ 
 h1,h2,h3,h4,h5,h6 { font-weight: bold; }
 
-/* always force a scrollbar in non-IE */ 
+/* always force a scrollbar in non-IE: */ 
 html { overflow-y: scroll; }
 
  
@@ -160,7 +160,7 @@ input[type="checkbox"] { vertical-align: bottom; }
 .ie6 input { vertical-align: text-bottom; }
 
 /* hand cursor on clickable input elements */
-label, input[type=button], input[type=submit], button { cursor: pointer; }
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
  
 /* webkit browsers add a 2px margin outside the chrome of form elements */  
 button, input, select, textarea { margin: 0; }
@@ -278,7 +278,7 @@ button {  width: auto; overflow: visible; }
  * inlined to avoid required HTTP connection www.phpied.com/delay-loading-your-print-css/ 
  */
 @media print {
-  * { background: transparent !important; color: #444 !important; text-shadow: none !important; }
+  * { background: transparent !important; color: black !important; text-shadow: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
   a, a:visited { color: #444 !important; text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
