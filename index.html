@@ -12,6 +12,12 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
+  <!-- encoding must be specified within the first 512 bytes www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset -->
+
+  <!-- meta element for compatibility mode needs to be before all elements except title & meta msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx --> 
+  <!-- Chrome Frame is only invoked if meta element for compatibility mode is within the first 1K bytes code.google.com/p/chromium/issues/detail?id=23003 -->
+
+
   <title>[Page Name] - [Section Name] - [Project Name]</title>
   <meta name="description" content="">
   <meta name="author" content="">
@@ -44,7 +50,6 @@
     </header>
     
     <div id="main">
-
     </div>
     
     <footer>
@@ -55,8 +60,13 @@
   <!-- Javascript at the bottom for fast page loading -->
   
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<<<<<<< HEAD
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="assets/js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
+=======
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.4.js"%3E%3C/script%3E'))</script>
+>>>>>>> upstream/master
   
   
   <!-- scripts concatenated and minified via ant build script-->
@@ -66,8 +76,14 @@
   
   
   <!--[if lt IE 7 ]>
+<<<<<<< HEAD
     <script src="assets/js/libs/dd_belatedpng.js"></script>
     <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
+=======
+    <script> //fix any <img> or .png_bg background-images
+      $.getScript("js/libs/dd_belatedpng.js",function(){ DD_belatedPNG.fix('img, .png_bg'); });
+    </script>
+>>>>>>> upstream/master
   <![endif]-->
 
   <!-- yui profiler and profileviewer - remove for production -->
