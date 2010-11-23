@@ -71,6 +71,8 @@
         <exclude name="**/.git/**"/>
         <exclude name="**/.svn/**"/>
         <exclude name=".gitignore"/>
+        <exclude name="*.conf*"/>
+        <exclude name="mime.types"/>
         <exclude name="**/${dir.build}/**"/>
         <exclude name="**/${dir.test}/**"/>
         <exclude name="**/${dir.demo}/**"/>
@@ -397,7 +399,6 @@
       <arg path="./${dir.build}/tools/htmlcompressor-0.9.3.jar"/>
       <arg line="--type html"/>
       <arg line="--preserve-multi-spaces"/>
-      <arg line="--remove-quotes"/>
       <arg line="--compress-js"/>
       <arg line="--compress-css"/>
       <srcfile/>
@@ -413,7 +414,6 @@
       <arg value="-jar"/>
       <arg path="./${dir.build}/tools/htmlcompressor-0.9.3.jar"/>
       <arg line="--type html"/>
-      <arg line="--remove-quotes"/>
       <arg line="--compress-js"/>
       <arg line="--compress-css"/>
       <srcfile/>

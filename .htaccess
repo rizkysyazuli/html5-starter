@@ -9,13 +9,6 @@
 #   perishablepress.com/press/2006/01/10/stupid-htaccess-tricks/
 
 
-# Apache module - mod_pagespeed, developed by Google, used to get websites hosted on Apache web servers to load twice faster on average.
-<IfModule pagespeed_module>
-# Official guide at: 
-# http://code.google.com/speed/page-speed/docs/using_mod.html
-</IfModule>
-
-
 # Force the latest IE version, in various cases when it may fall back to IE7 mode
 #  github.com/rails/rails/commit/123eb25#commitcomment-118920
 # Use ChromeFrame if it's installed for a better experience for the poor IE folk
@@ -87,7 +80,7 @@ AddType application/octet-stream       safariextz
 # allow concatenation from within specific js and css files 
 
 # e.g. Inside of script.combined.js you could have
-#   <!--#include file="jquery-1.4.2.js" -->
+#   <!--#include file="jquery-1.4.4.js" -->
 #   <!--#include file="jquery.idletimer.js" -->
 # and they would be included into this single file
 
