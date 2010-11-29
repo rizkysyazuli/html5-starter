@@ -16,6 +16,7 @@
 .settings
 nbproject
 thumbs.db
+*.tmproj
 
 # Folders to ignore
 .hg
