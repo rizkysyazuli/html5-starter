@@ -49,7 +49,7 @@
 
     </header>
     
-    <div id="main">
+    <div id="main" role="main">
     </div>
     
     <footer>
@@ -71,8 +71,10 @@
   
   
   <!--[if lt IE 7 ]>
-    <script> //fix any <img> or .png_bg background-images
-      $.getScript("assets/js/libs/dd_belatedpng.js",function(){ DD_belatedPNG.fix('img, .png_bg'); });
+    <script> 
+      // More information on tackling transparent PNGs for IE goo.gl/mZiyb
+      //fix any <img> or .png_bg background-images
+      $.getScript("js/libs/dd_belatedpng.js",function(){ DD_belatedPNG.fix('img, .png_bg'); });
     </script>
   <![endif]-->
 
