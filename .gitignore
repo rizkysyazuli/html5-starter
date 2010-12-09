@@ -19,6 +19,10 @@ thumbs.db
 *.tmproj
 *.kpf
 
+# Dreamweaver added files
+_notes
+dwsync.xml
+
 # Folders to ignore
 .hg
 .svn
