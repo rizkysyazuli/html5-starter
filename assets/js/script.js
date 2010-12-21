@@ -8,8 +8,3 @@
  *
  **/
 
-/* Combining media queries and JavaScript:
-   www.quirksmode.org/blog/archives/2010/08/combining_media.html */
-if (screen.width >= 480) {
-  // do stuff for non-mobile browser
-}
