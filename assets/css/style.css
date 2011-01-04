@@ -43,8 +43,8 @@ time, mark, audio, video {
   border:0;
   outline:0;
   font-size:100%;
+  font: inherit;
   vertical-align:baseline;
-  background:transparent;
 }
 
 article, aside, details, figcaption, figure,
@@ -69,7 +69,6 @@ del { text-decoration: line-through; }
 
 abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
 
-/* tables still need cellspacing="0" in the markup */
 table { border-collapse:collapse; border-spacing:0; }
 
 hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
@@ -133,7 +132,7 @@ nav ul, nav li { margin: 0; }
 small { font-size: 85%; }
 strong, th { font-weight: bold; }
 
-td, td img { vertical-align: top; }
+td { vertical-align: top; }
 
 /* set sub, sup without affecting line-height: gist.github.com/413930*/
 sub, sup { font-size: 75%; line-height: 0; position: relative; }
@@ -141,21 +140,16 @@ sup { top: -0.5em; }
 sub { bottom: -0.25em; }
 
 pre {
-  padding: 15px;
-
   /* www.pathf.com/blogs/2008/05/formatting-quoted-code-in-blog-posts-css21-white-space-pre-wrap/ */
-  white-space: pre; /* CSS2 */
-  white-space: pre-wrap; /* CSS 2.1 */
-  white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-  word-wrap: break-word; /* IE */
+  white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word;
+  padding: 15px;
 }
 
 textarea { overflow: auto; } /* www.sitepoint.com/blogs/2010/08/20/ie-remove-textarea-scrollbars/ */
 
 .ie6 legend, .ie7 legend { margin-left: -7px; } /* thnx ivannikolic! */
 
-/* align checkboxes, radios, text inputs with their label
-   by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
+/* align checkboxes, radios, text inputs with their label by: Thierry Koblentz tjkdesign.com/ez-css/css/base.css  */
 input[type="radio"] { vertical-align: text-bottom; }
 input[type="checkbox"] { vertical-align: bottom; }
 .ie7 input[type="checkbox"] { vertical-align: baseline; }
@@ -209,10 +203,9 @@ button {  width: auto; overflow: visible; }
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
 .hidden { display: none; visibility: hidden; }
 
-/* Hide only visually, but have it available for screenreaders
-   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden
-   Updated to ensure no other style overrides the styles defined in this rule */
-.visuallyHidden {
+/* Hide only visually, but have it available for screenreaders: by Jon Neal
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden {
     border: 0 !important;
     clip: rect(0 0 0 0);
     height: 1px !important;
