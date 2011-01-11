@@ -1,10 +1,7 @@
 CACHE MANIFEST
 apple-touch-icon.png
 css/style.css?v=1
-css/handheld.css?v=1
-js/jquery-1.4.2.min.js
-js/modernizr-1.5.min.js
+js/libs/jquery-1.4.4.min.js
+js/libs/modernizr-1.6.min.js
 js/plugins.js?v=1
 js/script.js?v=1
-js/profiling/yahoo-profiling.min.js
-js/profiling/config.js?v=1
