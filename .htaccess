@@ -221,8 +221,9 @@ AddType application/octet-stream       safariextz
   ExpiresByType text/css                  "access plus 2 months"
   ExpiresByType application/javascript    "access plus 2 months"
   ExpiresByType text/javascript           "access plus 2 months"
-
-  Header append Cache-Control "public"
+  <IfModule mod_headers.c>
+    Header append Cache-Control "public"
+  </IfModule>
 </IfModule>
 
 
@@ -384,6 +385,12 @@ AddCharset utf-8 .html .css .js .xml .json .rss
 # every folder on your server (which includes rather private places like CMS system folders).
 # Options -Indexes
 
+
+# Block access to "hidden" directories whose names begin with a period. This
+# includes directories used by version control systems such as Subversion or Git.
+<IfModule mod_rewrite.c>
+  RewriteRule "(^|/)\." - [F]
+</IfModule>
 
 
 # If your server is not already configured as such, the following directive
