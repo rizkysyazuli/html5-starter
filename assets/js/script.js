@@ -8,6 +8,7 @@
  *
  **/
 
+var doc_title = document.title;
 var App = {
   common: {
     init: function() {
@@ -68,6 +69,48 @@ var App = {
       data: { },
       dataType: 'json',
       complete: function() { }
+    },
+    
+    title: function(path) {
+      // reformat path names
+      var names = this.format(path);
+      // combine with document.title
+      var page_title = [doc_title].concat(names).reverse().join(' - ');
+      // return the new title
+      return page_title;
+    },
+    format: function(path) {
+      // placeholder for the reformatted path names.
+      // we don't want to break the original event.pathNames data
+      var names = [];
+      // loop each path names and capitalize them
+      for (var i=0; i<path.length; i++) {
+        names.push(this.capitalize(path[i]));
+        // third level is *usually* a url slug,
+        // example: news/detail/the-news-title
+        
+        // let's make it prettier
+        if (i==2) {
+          // remove 2nd level path name
+          names.splice(1,1);
+
+          var slug = names[1].split('-');
+          var title = [];
+
+          for (var j=0; j<slug.length; j++) {
+            title.push(this.capitalize(slug[j]));
+          }
+
+          title = title.join(' ');
+          names.pop(); // remove original slug from names
+          names.push(title); // add the newly formatted title
+        }
+      }
+      return names;
+    },
+    capitalize: function(txt) {
+      // make first letter uppercase
+      return txt.substr(0, 1).toUpperCase() + txt.substr(1);
     }
   },
 
@@ -77,7 +120,7 @@ var App = {
       // configure page-specific config & callbacks
       var config = App.page.config;
 
-      config.href = 'hello.html';
+      config.url = 'hello.html';
       config.complete = function() {
         // the callback. do stuff when AJAX request complete.
 
@@ -92,7 +135,7 @@ var App = {
       // configure page-specific config & callbacks
       var config = App.page.config;
 
-      config.href = 'world.html';
+      config.url = 'world.html';
       config.complete = function() {
         // the callback. do stuff when AJAX request complete.
 
@@ -130,6 +173,13 @@ var UTIL = {
         UTIL.exec(pathNames[0], pathNames[1]);
       } else {
         UTIL.exec(pathNames[0] || 'home');
+      }
+      
+      // update page title
+      if (pathNames.length) {
+        $.address.title(App.page.title(pathNames));
+      } else {
+        $.address.title(doc_title);
       }
     });
 
