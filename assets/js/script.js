@@ -116,6 +116,9 @@ var App = {
       return txt.substr(0, 1).toUpperCase() + txt.substr(1);
     }
   },
+  error: function() {
+    console.log('404: Page not found!');
+  },
 
 
   /* example methods */
@@ -161,6 +164,8 @@ var UTIL = {
 
     if (controller !== '' && App[controller] && typeof App[controller][action] == 'function') {
       App[controller][action]();
+    } else {
+      App['error']();
     }
   },
 
