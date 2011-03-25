@@ -28,6 +28,8 @@ var App = {
         if (target.tagName==='A' && target.className!=='external' && (target.href.indexOf('#')==-1)) {
           // get link href without the site address
           // example: "http://mysite.com/news/important" makes "news/important"
+          
+          // TODO: still doesn't work if site in sub-folder
           var url = location.protocol + '//' + location.host + location.pathname;
           var path = target.href.substring(url.length);
 
@@ -72,6 +74,8 @@ var App = {
     },
     
     title: function(path) {
+      // method to update document.title from URL hash
+      
       // reformat path names
       var names = this.format(path);
       // combine with document.title
@@ -94,8 +98,7 @@ var App = {
           // remove 2nd level path name
           names.splice(1,1);
 
-          var slug = names[1].split('-');
-          var title = [];
+          var slug = names[1].split('-'), title = [];
 
           for (var j=0; j<slug.length; j++) {
             title.push(this.capitalize(slug[j]));
@@ -114,34 +117,39 @@ var App = {
     }
   },
 
+
   /* example methods */
   hello: {
     init: function() {
-      // configure page-specific config & callbacks
       var config = App.page.config;
-
+      
       config.url = 'hello.html';
-      config.complete = function() {
-        // the callback. do stuff when AJAX request complete.
+      config.complete = function() {};
 
-      };
+      UTIL.exec('page');
+    },
+    there: function() {
+      var config = App.page.config;
+      
+      config.url = 'there.html';
+      config.complete = function() {};
 
-      // make the AJAX page request.
+      UTIL.exec('page');
+    },
+    world: function() {
+      var config = App.page.config;
+      
+      config.url = $.address.value();
+      config.complete = function() {};
+
       UTIL.exec('page');
     }
   },
   world: {
     init: function() {
-      // configure page-specific config & callbacks
       var config = App.page.config;
-
       config.url = 'world.html';
-      config.complete = function() {
-        // the callback. do stuff when AJAX request complete.
 
-      };
-
-      // make the AJAX page request.
       UTIL.exec('page');
     }
   }

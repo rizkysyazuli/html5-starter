@@ -40,10 +40,13 @@
     <header>
       <h1>Single-page AJAX App Demo</h1>
     </header>
+    
     <div id="main" role="main">
       <ul>
-        <li><a href="hello/">Hello</a></li>
-        <li><a href="world/">World</a></li>
+        <li><a href="hello/">Hello</a>, this is a 1st level page.</li>
+        <li><a href="world/">World</a>, is also a 1st level page.</li>
+        <li>Well, <a href="hello/there/">Hello There</a>&hellip; this one is 2nd level.</li>
+        <li>But wait, <a href="hello/world/this-is-a-page.html">this one is the 3rd level</a>.</li>
       </ul>
       
       <p>This is an <a href="http://www.google.com/">external link</a>.</p>
@@ -76,10 +79,10 @@
 
   <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
   <script>
-    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+    /*var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
     g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-    s.parentNode.insertBefore(g,s)}(document,"script"));
+    s.parentNode.insertBefore(g,s)}(document,"script"));*/
   </script>
 
 </body>
