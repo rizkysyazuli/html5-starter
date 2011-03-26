@@ -118,43 +118,6 @@ var App = {
   },
   error: function() {
     console.log('404: Page not found!');
-  },
-
-
-  /* example methods */
-  hello: {
-    init: function() {
-      var config = App.page.config;
-      
-      config.url = 'hello.html';
-      config.complete = function() {};
-
-      UTIL.exec('page');
-    },
-    there: function() {
-      var config = App.page.config;
-      
-      config.url = 'there.html';
-      config.complete = function() {};
-
-      UTIL.exec('page');
-    },
-    world: function() {
-      var config = App.page.config;
-      
-      config.url = $.address.value();
-      config.complete = function() {};
-
-      UTIL.exec('page');
-    }
-  },
-  world: {
-    init: function() {
-      var config = App.page.config;
-      config.url = 'world.html';
-
-      UTIL.exec('page');
-    }
   }
 };
 

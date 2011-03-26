@@ -68,6 +68,44 @@
   <!-- scripts concatenated and minified via ant build script-->
   <script src="../../assets/js/plugins.js"></script>
   <script src="../../assets/js/script.js"></script>
+  <script>
+    /* example methods */
+    App.hello = {
+      init: function() {
+        var config = App.page.config;
+
+        config.url = 'hello.html';
+        config.success = function() {};
+
+        UTIL.exec('page');
+      },
+      there: function() {
+        var config = App.page.config;
+
+        config.url = 'there.html';
+        config.success = function() {};
+
+        UTIL.exec('page');
+      },
+      world: function() {
+        var config = App.page.config;
+
+        config.url = $.address.value();
+        config.success = function() {};
+
+        UTIL.exec('page');
+      }
+    };
+    
+    App.world = {
+      init: function() {
+        var config = App.page.config;
+        config.url = 'world.html';
+
+        UTIL.exec('page');
+      }
+    }
+  </script>
   <!-- end scripts-->
 
 
