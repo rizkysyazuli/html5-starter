@@ -134,7 +134,7 @@ var UTIL = {
 
   init: function() {
     // enable Google crawlable URL hash values.
-    $.address.crawlable(true);
+    // $.address.crawlable(true);
 
     // this is where the magic happens.
     // trigger method execution on address.change event.
