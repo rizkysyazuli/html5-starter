@@ -70,6 +70,17 @@
   <script src="../../assets/js/script.js"></script>
   <script>
     /* example methods */
+    App.home = {
+      init: function() {
+        var config = App.page.config;
+
+        config.url = 'start.html';
+        config.success = function() {};
+
+        UTIL.exec('page');
+      }
+    };
+    
     App.hello = {
       init: function() {
         var config = App.page.config;
