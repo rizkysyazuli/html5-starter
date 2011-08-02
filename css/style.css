@@ -1,18 +1,22 @@
-/*
+/* ==|== normalize ==========================================================
+ * 
  * HTML5 ✰ Boilerplate
  *
  * What follows is the result of much research on cross-browser styling. 
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
  * Kroc Camen, and the H5BP dev community and team.
+ *
+ * Detailed information about this CSS: h5bp.com/css
  */
 
 
 /* =============================================================================
-   HTML5 element display
+   HTML5 display definitions
    ========================================================================== */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
-audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
 
 
 /* =============================================================================
@@ -29,7 +33,7 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 
-html { font-size: 100%; overflow-y: scroll; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 100%; overflow-y: scroll; -webkit-overflow-scrolling: touch; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 
@@ -98,7 +102,7 @@ sub { bottom: -0.25em; }
 
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
-nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
 
 /* =============================================================================
@@ -106,19 +110,17 @@ nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
    ========================================================================== */
 
 /*
- * Improve image quality when scaled in IE7
- * code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ * 1. Improve image quality when scaled in IE7 http://h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers http://h5bp.com/e 
  */
 
-img { border: 0; -ms-interpolation-mode: bicubic; }
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
 /*
  * Correct overflow displayed oddly in IE9 
  */
 
-svg:not(:root) {
-    overflow: hidden;
-}
+svg:not(:root) { overflow: hidden; }
 
 
 /* =============================================================================
@@ -135,15 +137,15 @@ figure { margin: 0; }
 form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
 
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
 /* 
  * 1. Correct color not inheriting in IE6/7/8/9 
  * 2. Correct alignment displayed oddly in IE6/7 
  */
 
 legend { border: 0; *margin-left: -7px; padding: 0; }
-
-/* Indicate that 'label' will shift focus to the associated form element */
-label { cursor: pointer; }
 
 /*
  * 1. Correct font-size not inheriting in all browsers
@@ -161,6 +163,12 @@ button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: ba
 button, input { line-height: normal; *overflow: visible; }
 
 /*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
  * 1. Display hand cursor for clickable form elements
  * 2. Allow styling of clickable form elements in iOS
  */
@@ -172,7 +180,6 @@ button, input[type="button"], input[type="reset"], input[type="submit"] { cursor
  */
 
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
-
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
@@ -183,8 +190,12 @@ input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
-/* Remove default vertical scrollbar in IE6/7/8/9 */
-textarea { overflow: auto; vertical-align: top; }
+/* 
+ * 1. Remove default vertical scrollbar in IE6/7/8/9 
+ * 2. Allow only vertical resizing
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
 
 /* Colors for form validity */
 input:valid, textarea:valid {  }
@@ -198,8 +209,8 @@ input:invalid, textarea:invalid { background-color: #f0dddd; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 
-/* =============================================================================
-   Primary styles
+/* ==|== primary styles =====================================================
+   
    Author: 
    ========================================================================== */
 
@@ -218,17 +229,18 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 
 
-/* =============================================================================
-   Non-semantic helper classes
+/* ==|== non-semantic helper classes ========================================
+   
    Please define your styles before this section.
    ========================================================================== */
 
 /* For image replacement */
-.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .ir br { display: none; }
 
 /* Hide for both screenreaders and browsers:
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
+[hidden] { display: none; visibility: hidden; }
 .hidden { display: none; visibility: hidden; }
 
 /* Hide only visually, but have it available for screenreaders: by Jon Neal.
@@ -248,7 +260,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 
 
-/* =============================================================================
+/* ==|== media queries ======================================================
    PLACEHOLDER Media Queries for Responsive Design.
    These override the primary ('mobile first') styles
    Modify as content requires.
@@ -266,14 +278,14 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 
 
-/* =============================================================================
+/* ==|== print styles =======================================================
    Print styles.
    Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
  
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
-  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
   .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
@@ -283,5 +295,5 @@ table { border-collapse: collapse; border-spacing: 0; }
   img { max-width: 100% !important; }
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3{ page-break-after: avoid; }
+  h2, h3 { page-break-after: avoid; }
 }
